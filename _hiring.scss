@@ -1,0 +1,127 @@
+// ── ROCKON: EVENTS (адаптация hiring) ──
+
+#event {
+    background: $color-bg;
+    padding: 0 0 80px;
+
+    @include mobile {
+        padding: 0 0 60px;
+    }
+
+    .section-header {
+        @include section-header;
+    }
+}
+
+.events-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 60px;
+    align-items: start;
+    padding: 0 48px;
+
+    @include tablet {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 0 24px;
+    }
+
+    @include mobile {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 0 16px;
+    }
+}
+
+.event-photo {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    background: linear-gradient(160deg, #5a2000, $color-bg2);
+    border-radius: 4px;
+    overflow: hidden;
+    @include flex-center;
+    font-size: 64px;
+
+    @include tablet {
+        aspect-ratio: 16 / 9;
+    }
+
+    @include mobile {
+        aspect-ratio: 16 / 9;
+    }
+}
+
+.event-list {
+    @include flex-column;
+}
+
+.event-item {
+    padding: 28px 0;
+    border-bottom: 1px solid $color-border;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    @include mobile {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
+
+.event-date {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: $color-gold;
+    margin-bottom: 6px;
+}
+
+.event-name {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+
+    @include mobile {
+        font-size: 15px;
+    }
+}
+
+.event-loc {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: $color-muted;
+}
+
+.btn-ticket {
+    border: 1px solid rgba($color-gold, 0.5);
+    background: transparent;
+    color: $color-white;
+    padding: 10px 22px;
+    cursor: pointer;
+    font-family: $font-primary;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    text-decoration: none;
+
+    &:hover {
+        background: $color-gold;
+        color: #1a0800;
+        border-color: $color-gold;
+    }
+
+    @include mobile {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.view-more-wrap {
+    text-align: center;
+    margin-top: 40px;
+}

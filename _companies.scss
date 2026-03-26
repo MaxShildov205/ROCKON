@@ -1,0 +1,76 @@
+// ── ROCKON: DISCOGRAPHY (адаптация companies) ──
+
+#discography {
+    background: $color-bg;
+
+    .section-header {
+        @include section-header;
+    }
+}
+
+.disco-track {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 0 48px 60px;
+
+    @include tablet {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0 24px 40px;
+    }
+
+    @include mobile {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 0 16px 32px;
+    }
+
+    @include iphone {
+        grid-template-columns: 1fr;
+    }
+}
+
+.disco-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    @include flex-column;
+
+    &-img {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        background: linear-gradient(160deg, #4a1a00, $color-bg2);
+        @include flex-center;
+        font-size: 48px;
+        color: rgba($color-white, 0.2);
+        overflow: hidden;
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+        }
+    }
+
+    &-info {
+        padding: 14px 0;
+
+        .disco-tag {
+            font-size: 10px;
+            letter-spacing: 3px;
+            color: $color-gold;
+        }
+
+        .disco-title {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-top: 4px;
+
+            @include mobile {
+                font-size: 14px;
+            }
+        }
+    }
+}
